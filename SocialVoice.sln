@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialVoice", "SocialVoice\SocialVoice.csproj", "{7FF56E83-E0F2-46F6-9552-24D9B9B2D880}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FF56E83-E0F2-46F6-9552-24D9B9B2D880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FF56E83-E0F2-46F6-9552-24D9B9B2D880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FF56E83-E0F2-46F6-9552-24D9B9B2D880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF56E83-E0F2-46F6-9552-24D9B9B2D880}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7826F67C-5E11-4D20-AC9A-D17D92D6AADB}
+	EndGlobalSection
+EndGlobal
