@@ -93,9 +93,7 @@ namespace Persistence.Migrations
                     INN = table.Column<int>(nullable: false),
                     Street = table.Column<string>(nullable: true),
                     Phone = table.Column<string>(nullable: true),
-                    Location = table.Column<string>(nullable: true),
-                    Pros = table.Column<int>(nullable: false),
-                    Cons = table.Column<int>(nullable: false)
+                    Location = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -126,7 +124,10 @@ namespace Persistence.Migrations
                     IssueUid = table.Column<string>(nullable: true),
                     OrganizationId = table.Column<int>(nullable: false),
                     Title = table.Column<string>(nullable: true),
-                    Content = table.Column<string>(nullable: true)
+                    Content = table.Column<string>(nullable: true),
+                    State = table.Column<int>(nullable: false),
+                    Pros = table.Column<int>(nullable: false),
+                    Cons = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -190,6 +191,39 @@ namespace Persistence.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Voter",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Created = table.Column<DateTime>(nullable: false),
+                    LastModified = table.Column<DateTime>(nullable: true),
+                    Status = table.Column<string>(nullable: true),
+                    VisitorId = table.Column<string>(nullable: true),
+                    Incognito = table.Column<bool>(nullable: false),
+                    IPAddress = table.Column<string>(nullable: true),
+                    Latitude = table.Column<decimal>(nullable: false),
+                    Longitude = table.Column<decimal>(nullable: false),
+                    BrowserName = table.Column<string>(nullable: true),
+                    BrowserMajorVersion = table.Column<string>(nullable: true),
+                    BrowserFullVersion = table.Column<string>(nullable: true),
+                    Os = table.Column<string>(nullable: true),
+                    OsVersion = table.Column<string>(nullable: true),
+                    UserAgent = table.Column<string>(nullable: true),
+                    IssueId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Voter", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Voter_Issues_IssueId",
+                        column: x => x.IssueId,
+                        principalTable: "Issues",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Cities_RegionId",
                 table: "Cities",
@@ -229,6 +263,11 @@ namespace Persistence.Migrations
                 name: "IX_Solutions_IssueId",
                 table: "Solutions",
                 column: "IssueId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Voter_IssueId",
+                table: "Voter",
+                column: "IssueId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -238,6 +277,9 @@ namespace Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "Solutions");
+
+            migrationBuilder.DropTable(
+                name: "Voter");
 
             migrationBuilder.DropTable(
                 name: "Issues");

@@ -15,8 +15,6 @@ namespace Domain.Entites
         public string Street { get; set; }
         public string Phone { get; set; }
         public string Location { get; set; }
-        public int Pros { get; set; }
-        public int Cons { get; set; }
 
         public Region Region { get; set; }
         public District District { get; set; }

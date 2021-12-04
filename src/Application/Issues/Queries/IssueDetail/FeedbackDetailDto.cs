@@ -3,20 +3,20 @@ using AutoMapper;
 using Domain.Entites;
 using System;
 
-namespace Application.Organizations.Queries.OrganizationDetail
+namespace Application.Issues.Queries.IssueDetail
 {
-    public class IssueDetailDto : IMapFrom<Issue>
+    public class FeedbackDetailDto : IMapFrom<Feedback>
     {
         public int Id { get; set; }
-        public string IssueUid { get; set; }
 
-        public string Title { get; set; }
         public string Content { get; set; }
+        public int Pros { get; set; }
+        public int Cons { get; set; }
         public DateTime Created { get; set; }
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Issue, IssueDetailDto>();
+            profile.CreateMap<Feedback, FeedbackDetailDto>();
         }
     }
 }

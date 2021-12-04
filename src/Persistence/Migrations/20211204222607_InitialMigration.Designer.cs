@@ -10,7 +10,7 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(SocialVoiceDbContext))]
-    [Migration("20211204183435_InitialMigration")]
+    [Migration("20211204222607_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -126,6 +126,9 @@ namespace Persistence.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<int>("Cons")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Content")
                         .HasColumnType("text");
 
@@ -139,6 +142,12 @@ namespace Persistence.Migrations
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("OrganizationId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Pros")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("State")
                         .HasColumnType("integer");
 
                     b.Property<string>("Status")
@@ -164,9 +173,6 @@ namespace Persistence.Migrations
                     b.Property<string>("Brand")
                         .HasColumnType("text");
 
-                    b.Property<int>("Cons")
-                        .HasColumnType("integer");
-
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp without time zone");
 
@@ -187,9 +193,6 @@ namespace Persistence.Migrations
 
                     b.Property<string>("Phone")
                         .HasColumnType("text");
-
-                    b.Property<int>("Pros")
-                        .HasColumnType("integer");
 
                     b.Property<int>("RegionId")
                         .HasColumnType("integer");
@@ -271,6 +274,65 @@ namespace Persistence.Migrations
                     b.ToTable("Solutions");
                 });
 
+            modelBuilder.Entity("Domain.Entites.Voter", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("BrowserFullVersion")
+                        .HasColumnType("text");
+
+                    b.Property<string>("BrowserMajorVersion")
+                        .HasColumnType("text");
+
+                    b.Property<string>("BrowserName")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("IPAddress")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("Incognito")
+                        .HasColumnType("boolean");
+
+                    b.Property<int?>("IssueId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("LastModified")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<decimal>("Latitude")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal>("Longitude")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("Os")
+                        .HasColumnType("text");
+
+                    b.Property<string>("OsVersion")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserAgent")
+                        .HasColumnType("text");
+
+                    b.Property<string>("VisitorId")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IssueId");
+
+                    b.ToTable("Voter");
+                });
+
             modelBuilder.Entity("Domain.Entites.City", b =>
                 {
                     b.HasOne("Domain.Entites.Region", "Region")
@@ -330,6 +392,13 @@ namespace Persistence.Migrations
                 {
                     b.HasOne("Domain.Entites.Issue", null)
                         .WithMany("Solutions")
+                        .HasForeignKey("IssueId");
+                });
+
+            modelBuilder.Entity("Domain.Entites.Voter", b =>
+                {
+                    b.HasOne("Domain.Entites.Issue", null)
+                        .WithMany("Voters")
                         .HasForeignKey("IssueId");
                 });
 #pragma warning restore 612, 618
