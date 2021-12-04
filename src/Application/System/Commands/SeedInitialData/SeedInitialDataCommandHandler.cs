@@ -5,6 +5,10 @@ using System.Threading.Tasks;
 
 namespace Application.System.Commands.SeedInitialData
 {
+    public class SeedInitialDataCommand : IRequest
+    {
+    }
+
     public class SeedInitialDataCommandHandler : IRequestHandler<SeedInitialDataCommand>
     {
         private readonly ISocialVoiceDbContext _context;

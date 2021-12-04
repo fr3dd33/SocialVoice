@@ -1,6 +1,7 @@
 ﻿using Application.Common.Interfaces;
 using Common;
 using Domain.Common;
+using Domain.Entites;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Threading;
@@ -19,6 +20,14 @@ namespace Persistence
         {
             _dateTime = dateTime;
         }
+
+        public DbSet<City> Cities { get; set; }
+        public DbSet<District> Districts { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
+        public DbSet<Issue> Issues { get; set; }
+        public DbSet<Organization> Organizations { get; set; }
+        public DbSet<Region> Regions { get; set; }
+        public DbSet<Solution> Solutions { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
