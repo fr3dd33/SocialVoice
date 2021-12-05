@@ -36,7 +36,7 @@ namespace Application.Issues.Commands.VoteProIssue
             _httpContextAccessor.HttpContext.Request.Headers.TryGetValue("User-Agent", out var userAgent);
             if (issue.Voters.Any(x =>
                 x.IPAddress == _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString() &&
-                x.UserAgent == userAgent
+                x.VisitorId == request.VisitorId
             ))
             {
                 throw new BadRequestException("You can not vote more than once");

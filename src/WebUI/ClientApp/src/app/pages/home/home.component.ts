@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { IssueService, IssuesListDto } from "../../services/social-voice-api";
+import FingerprintJS from "@fingerprintjs/fingerprintjs";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
+
   issues: IssuesListDto[];
   searchText = "";
   total: number = 0;
@@ -14,11 +16,20 @@ export class HomeComponent implements OnInit {
     offset: 0,
     search: ""
   }
+  visitorId = "";
 
   constructor(
     private issueService: IssueService
   ) {
+    this.getVisitorID();
+  }
 
+  public getVisitorID(): void {
+    FingerprintJS.load()
+      .then((fp) => fp.get())
+      .then((result) => {
+        this.visitorId = result.visitorId;
+      });
   }
 
   ngOnInit() {
