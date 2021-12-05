@@ -1,38 +1,35 @@
-<div class="item">
+<div class="item" [routerLink]="['issues/', issue.id]">
   <div class="iq-blog-box">
     <div class="iq-blog-image clearfix">
       <ul class="iq-blogtag">
-        <li><a href="javascript:void(0)">XL8977-BCHH8210Z-BNQC56</a></li>
+        <li><a>{{ issue.issueUid }}</a></li>
       </ul>
       <ul class="title">
-        <li><p class="title-text">Заголовок актуальной проблемы в несколько строки</p></li>
+        <li><p class="title-text">{{ issue.title }}</p></li>
       </ul>
       <div class="dropdown-divider"></div>
     </div>
     <div class="iq-blog-detail">
       <div class="blog-title">
       </div>
-      <p class="no-long">It is a long established fact that a reader will be distracted by the readable.
-        asd ajskdkajsdjak sdka skd akj saj
-        t is a long established fact that a reader will be distracted by the readable.asd ajskdkajsdja
-        k sdka skd akj saj</p>
+      <p class="no-long">{{issue.content}}</p>
       <div class="iq-blog-meta">
         <ul class="iq-postdate">
           <li class="list-inline-item">
             <a href="javascript:void(0)" rel="bookmark">
-              <time class="entry-date published updated" datetime="2020-02-17T06:40:07+00:00">17.01.2020</time>
+              <time class="entry-date published updated" datetime="2020-02-17T06:40:07+00:00">{{ issue.created | date }}</time>
             </a>
           </li>
           <li class="list-inline-item pull-right">
             <a href="javascript:void(0)" rel="bookmark">
-              <time class="entry-date published updated" datetime="2020-02-17T06:40:07+00:00">г. Ташкент</time>
+              <time class="entry-date published updated" datetime="2020-02-17T06:40:07+00:00">{{ issue.regionName }}</time>
             </a>
           </li>
         </ul>
       </div>
       <div class="blog-button">
-        <a class="iq-btn-link focusable text-success pull-left">144<i class="ml-2 fa fa-plus"></i></a>
-        <a class="iq-btn-link focusable text-danger pull-right">23<i class="ml-2 fa fa-minus"></i></a>
+        <a class="iq-btn-link focusable text-success pull-left" (click)="$event.stopPropagation();onPro()">{{issue.pros}}<i class="ml-2 fa fa-plus"></i></a>
+        <a class="iq-btn-link focusable text-danger pull-right" (click)="$event.stopPropagation();onCos()">{{issue.cons}}<i class="ml-2 fa fa-minus"></i></a>
       </div>
     </div>
   </div>

@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { IssueService, OrganizationService } from './services/social-voice-api';
 import { MissionComponent } from "./pages/mission/mission.component";
+import { ToastrModule } from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MissionComponent } from "./pages/mission/mission.component";
     ComponentsModule,
     FormsModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     IssueService,

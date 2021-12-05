@@ -6,7 +6,6 @@ import { IssueService, IssuesListDto } from "../../services/social-voice-api";
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
-
   issues: IssuesListDto[];
   searchText = "";
   total: number = 0;
@@ -43,6 +42,10 @@ export class HomeComponent implements OnInit {
       offset: 0,
       search: this.searchText
     };
+    this.onGet();
+  }
+
+  onUpdate() {
     this.onGet();
   }
 }

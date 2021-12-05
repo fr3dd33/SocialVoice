@@ -1032,7 +1032,7 @@ ol.commentlist .pingback a:hover, ol.commentlist .trackback a:hover { color: #0d
 .sticky .iq-blog-box { background: #f2f5fe; }
 
 /*latest Blog*/
-.iq-blog-box { position: relative; overflow: hidden; margin-bottom: 45px; border: 1px solid #f2f4ff; border-radius: 6px; background: #ffffff; transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; }
+.iq-blog-box { position: relative; overflow: hidden; margin-bottom: 45px; border: 1px solid #dadce9; border-radius: 6px; background: #ffffff; transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; }
 .iq-blog-box:hover { -webkit-box-shadow: 0px 34.659px 15px 0px rgba(0, 0, 0, 0.06); -moz-box-shadow: 0px 34.659px 15px 0px rgba(0, 0, 0, 0.06); box-shadow: 0px 34.659px 15px 0px rgba(0, 0, 0, 0.06); }
 .single-post .hentry  .iq-blog-box:hover, .single .hentry  .iq-blog-box:hover { box-shadow: none; }
 .iq-blog-box .iq-blog-image { position: relative; text-align: center; display: inline-block; float: left; width: 100%; }
