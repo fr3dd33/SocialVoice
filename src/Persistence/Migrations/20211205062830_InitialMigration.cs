@@ -87,7 +87,8 @@ namespace Persistence.Migrations
                     LastModified = table.Column<DateTime>(nullable: true),
                     Status = table.Column<string>(nullable: true),
                     RegionId = table.Column<int>(nullable: false),
-                    DistrictId = table.Column<int>(nullable: false),
+                    CityId = table.Column<int>(nullable: false),
+                    DistrictId = table.Column<int>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Brand = table.Column<string>(nullable: true),
                     INN = table.Column<int>(nullable: false),
@@ -99,11 +100,17 @@ namespace Persistence.Migrations
                 {
                     table.PrimaryKey("PK_Organizations", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_Organizations_Cities_CityId",
+                        column: x => x.CityId,
+                        principalTable: "Cities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Organizations_Districts_DistrictId",
                         column: x => x.DistrictId,
                         principalTable: "Districts",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Organizations_Regions_RegionId",
                         column: x => x.RegionId,
@@ -248,6 +255,11 @@ namespace Persistence.Migrations
                 name: "IX_Issues_OrganizationId",
                 table: "Issues",
                 column: "OrganizationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Organizations_CityId",
+                table: "Organizations",
+                column: "CityId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Organizations_DistrictId",

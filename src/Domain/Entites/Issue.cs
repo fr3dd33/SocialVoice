@@ -5,6 +5,13 @@ namespace Domain.Entites
 {
     public class Issue : AuditableEntity
     {
+        public Issue()
+        {
+            Feedbacks = new List<Feedback>();
+            Solutions = new List<Solution>();
+            Voters = new List<Voter>();
+        }
+
         public int Id { get; set; }
         public string IssueUid { get; set; }
         public int OrganizationId { get; set; }

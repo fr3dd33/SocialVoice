@@ -5,6 +5,11 @@ namespace Domain.Entites
 {
     public class City : AuditableEntity
     {
+        public City()
+        {
+            Districts = new List<District>();
+        }
+
         public int Id { get; set; }
         public int RegionId { get; set; }
 

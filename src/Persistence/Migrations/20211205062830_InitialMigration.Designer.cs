@@ -10,7 +10,7 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(SocialVoiceDbContext))]
-    [Migration("20211204222607_InitialMigration")]
+    [Migration("20211205062830_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -173,10 +173,13 @@ namespace Persistence.Migrations
                     b.Property<string>("Brand")
                         .HasColumnType("text");
 
+                    b.Property<int>("CityId")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<int>("DistrictId")
+                    b.Property<int?>("DistrictId")
                         .HasColumnType("integer");
 
                     b.Property<int>("INN")
@@ -204,6 +207,8 @@ namespace Persistence.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CityId");
 
                     b.HasIndex("DistrictId");
 
@@ -375,11 +380,15 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entites.Organization", b =>
                 {
-                    b.HasOne("Domain.Entites.District", "District")
+                    b.HasOne("Domain.Entites.City", "City")
                         .WithMany()
-                        .HasForeignKey("DistrictId")
+                        .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Domain.Entites.District", "District")
+                        .WithMany()
+                        .HasForeignKey("DistrictId");
 
                     b.HasOne("Domain.Entites.Region", "Region")
                         .WithMany()
