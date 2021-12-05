@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-sm-12">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="/">
+          <a class="navbar-brand" [routerLink]="['/']">
             <img class="img-fluid" src="/assets/template/img/logo.png" alt="img">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +23,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#list">
+                <a class="nav-link" [routerLink]="['organizations']">
                   Список организаций
                 </a>
               </li>
@@ -36,8 +36,8 @@
           </div>
           <div class="sub-main">
             <ul>
-              <li class="d-inline"><a href="#" class="login iq-button iq-btn-outline iq-btn-round">Сообщить о проблеме</a></li>
-              <li class="d-inline"><a href="#" class="signup iq-button default iq-btn-round">Поддержать проект</a></li>
+              <li class="d-inline"><a [routerLink]="['issues/add']" class="login iq-button iq-btn-outline iq-btn-round">Сообщить о проблеме</a></li>
+              <li class="d-inline"><a href="#contact" class="signup iq-button default iq-btn-round">Поддержать проект</a></li>
             </ul>
           </div>
         </nav>

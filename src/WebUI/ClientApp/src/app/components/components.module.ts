@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {FooterComponent} from "./footer/footer.component";
 import {HeaderComponent} from "./header/header.component";
 import { IssueCardComponent } from './issue-card/issue-card.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -10,10 +11,11 @@ import { IssueCardComponent } from './issue-card/issue-card.component';
   declarations: [
     FooterComponent,
     HeaderComponent,
-    IssueCardComponent,
+    IssueCardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     FooterComponent,

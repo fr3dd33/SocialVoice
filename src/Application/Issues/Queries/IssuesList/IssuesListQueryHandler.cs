@@ -2,6 +2,7 @@
 using Application.Common.Models;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Domain.Entites;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -26,12 +27,21 @@ namespace Application.Issues.Queries.IssuesList
 
         public async Task<BaseView<IssuesListDto>> Handle(IssuesListQuery request, CancellationToken cancellationToken)
         {
+            IQueryable<Issue> issues = _context.Issues.Include(x => x.Organization)
+                    .ThenInclude(x => x.Region)
+                    .OrderByDescending(x => x.Pros);
+
+            if (!string.IsNullOrEmpty(request.Search))
+            {
+                issues = issues.Where(x => 
+                    x.Title.ToLower().Contains(request.Search.ToLower()) || 
+                    x.Organization.Name.ToLower().Contains(request.Search)
+                );
+            }
+
             return new BaseView<IssuesListDto>
             {
-                Data = await _context.Issues.Include(x => x.Organization)
-                    .ThenInclude(x => x.Region)
-                    .OrderByDescending(x => x.Pros)
-                    .Skip(request.Offset)
+                Data = await issues.Skip(request.Offset)
                     .Take(request.Limit)
                     .ProjectTo<IssuesListDto>(_mapper.ConfigurationProvider)
                     .ToListAsync(),
