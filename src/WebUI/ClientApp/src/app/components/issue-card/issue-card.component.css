@@ -1,0 +1,29 @@
+.title {
+  margin: 0;
+  padding: 30px 0 0;
+  list-style: none;
+}
+
+.title-text {
+  text-overflow: ellipsis;
+  color: #0d1e67;
+  text-decoration: none;
+  font-family: 'TeXGyreAdventor-Bold', sans-serif;
+  margin: 0;
+  padding: 0 5px 0 5px;
+}
+
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+a.focusable:hover {
+  border: solid 3px dodgerblue;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+p.no-long {
+  text-overflow: ellipsis;
+}
