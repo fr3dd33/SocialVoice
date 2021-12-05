@@ -4,15 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import {ComponentsModule} from "./components/components.module";
-import {IssueInfoComponent} from "./issue/issue-info/issue-info.component";
-import {IssueAddComponent} from "./issue/issue-add/issue-add.component";
-import { OrganizationInfoComponent } from './organization/organization-info/organization-info.component';
-import { OrganizationListComponent } from './organization/organization-list/organization-list.component';
+import { ComponentsModule } from "./components/components.module";
+import { HomeComponent } from './pages/home/home.component';
+import { IssueInfoComponent } from "./pages/issue/issue-info/issue-info.component";
+import { IssueAddComponent } from "./pages/issue/issue-add/issue-add.component";
+import { OrganizationInfoComponent } from './pages/organization/organization-info/organization-info.component';
+import { OrganizationListComponent } from './pages/organization/organization-list/organization-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { IssueService, OrganizationService } from './services/social-voice-api';
+import { MissionComponent } from "./pages/mission/mission.component";
 
 @NgModule({
   declarations: [
@@ -21,10 +22,11 @@ import { IssueService, OrganizationService } from './services/social-voice-api';
     OrganizationInfoComponent,
     IssueInfoComponent,
     IssueAddComponent,
-    HomeComponent
+    HomeComponent,
+    MissionComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
     HttpClientModule,
     ComponentsModule,
     FormsModule,

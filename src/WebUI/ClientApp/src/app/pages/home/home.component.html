@@ -1,13 +1,12 @@
-
 <section>
   <div class="row">
     <div class="mb-5 col-lg-9 offset-lg-2 col-md-6 offset-md-1">
       <form method="post">
         <div class="row no-gutters">
-          <div class="col-lg-10">
+          <div class="col-lg-9">
             <input [(ngModel)]="searchText" (keyup)="onSearch()" type="email" name="query" placeholder="Поиск проблемы или организации" required="">
           </div>
-          <div class="col-lg-2">
+          <div class="col-lg-2" style="margin-left: 15px">
             <input type="submit" value="Поиск">
           </div>
         </div>

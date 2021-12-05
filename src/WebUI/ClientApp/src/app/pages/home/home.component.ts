@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IssueService, IssuesListDto } from '../services/social-voice-api';
+import { IssueService, IssuesListDto } from "../../services/social-voice-api";
 
 @Component({
   selector: 'app-home',
