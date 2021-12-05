@@ -16,7 +16,7 @@ namespace Application.Issues.Queries.IssueDetail
         public string Content { get; set; }
         public IssueState State { get; set; }
 
-        public Organization Organization { get; set; }
+        public OrganizationDetailDto Organization { get; set; }
         public List<FeedbackDetailDto> Feedbacks { get; set; }
         public DateTime Created { get; set; }
 

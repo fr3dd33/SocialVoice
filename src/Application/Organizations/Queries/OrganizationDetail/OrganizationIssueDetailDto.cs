@@ -5,7 +5,7 @@ using System;
 
 namespace Application.Organizations.Queries.OrganizationDetail
 {
-    public class IssueDetailDto : IMapFrom<Issue>
+    public class OrganizationIssueDetailDto : IMapFrom<Issue>
     {
         public int Id { get; set; }
         public string IssueUid { get; set; }
@@ -16,7 +16,7 @@ namespace Application.Organizations.Queries.OrganizationDetail
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Issue, IssueDetailDto>();
+            profile.CreateMap<Issue, OrganizationIssueDetailDto>();
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Application.Organizations.Queries.OrganizationDetail
 
         public string RegionName { get; set; }
         public string DistrictName { get; set; }
-        public List<IssueDetailDto> Issues { get; set; }
+        public List<OrganizationIssueDetailDto> Issues { get; set; }
 
         public void Mapping(Profile profile)
         {
