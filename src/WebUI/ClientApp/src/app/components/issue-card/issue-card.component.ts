@@ -9,6 +9,7 @@ import { ToastrService } from "ngx-toastr";
 })
 export class IssueCardComponent implements OnInit {
   @Input() issue: IssuesListDto;
+  @Input() visitorId: string;
   @Output() update: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private service: IssueService, private toastr: ToastrService) { }
@@ -17,7 +18,7 @@ export class IssueCardComponent implements OnInit {
   }
 
   onPro() {
-    this.service.votePro({ id: this.issue.id }).subscribe(
+    this.service.votePro({ id: this.issue.id, visitorId: this.visitorId }).subscribe(
       response => {
         this.toastr.success('Ваш голос был принят', 'Успешно', { timeOut: 5000 });
         this.update.emit();
@@ -32,7 +33,7 @@ export class IssueCardComponent implements OnInit {
   }
 
   onCos() {
-    this.service.voteCon({ id: this.issue.id }).subscribe(
+    this.service.voteCon({ id: this.issue.id, visitorId: this.visitorId }).subscribe(
       response => {
         this.update.emit();
       }, error => {

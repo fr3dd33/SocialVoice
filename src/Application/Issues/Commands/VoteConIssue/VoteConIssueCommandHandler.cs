@@ -47,7 +47,8 @@ namespace Application.Issues.Commands.VoteConIssue
             issue.Voters.Add(new Voter
             {
                 UserAgent = userAgent,
-                IPAddress = _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString()
+                IPAddress = _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString(),
+                VisitorId = request.VisitorId
             });
 
             await _context.SaveChangesAsync(cancellationToken);

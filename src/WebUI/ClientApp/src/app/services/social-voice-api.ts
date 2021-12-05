@@ -506,10 +506,12 @@ export interface IssuesListDto {
 
 export interface VoteProIssueCommand {
     id?: number;
+    visitorId?: string | undefined;
 }
 
 export interface VoteConIssueCommand {
     id?: number;
+    visitorId?: string | undefined;
 }
 
 export interface OrganizationDetailDto2 {

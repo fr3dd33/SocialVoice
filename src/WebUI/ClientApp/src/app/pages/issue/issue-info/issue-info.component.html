@@ -1,21 +1,18 @@
 <section>
   <div class="container">
-    <h2 class="iq-title"> Организация - Бренд</h2><hr><br>
+    <h2 class="iq-title"> {{(issue.organization.brand ? issue.organization.brand + " - " : "") + issue.organization.name}}</h2><hr><br>
     <div class="row">
       <div class="col-lg-6 col-sm-12 mb-lg-0 mb-5">
         <div class=" text-left iq-title-box iq-title-default iq-title-box-1">
           <div class="iq-title-icon">
           </div>
-          <h4 class="iq-title"> Заголовок </h4>
+          <h4 class="iq-title"> {{issue.title}} </h4>
 
-          <p class="iq-title-desc">There are many variations of passages of Lorem Ipsum available, but the majority have
-            suffered alteration in some form, by injected humour, or randomised words which don’t look even slightly
-            believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t anything
-            embarrassing hidden in the middle of text.</p>
+          <p class="iq-title-desc">{{issue.content}}</p>
         </div>
         <ul class="job-details d-inline-block p-0">
           <li class="list-unstyled">
-            <h6 class="deatils d-inline-block">Дата создания :</h6><span class="pl-3">23.02.2020</span></li>
+            <h6 class="deatils d-inline-block">Дата создания :</h6><span class="pl-3">{{issue.created | date}}</span></li>
           <li class="list-unstyled">
             <h6 class="deatils d-inline-block">Прикрепленные файлы :</h6><span class="pl-3"><a href="#">Тест.jpg</a></span></li>
           <li class="list-unstyled">
@@ -30,7 +27,7 @@
       </div>
     </div>
     <div class="widget">
-      Примечание: Что-то что-то
+      Примечание: Для организации
       <hr>
       <a class="pull-right" href="#">Обратная связь</a>
     </div>
@@ -38,18 +35,18 @@
       <ul id="recentcomments">
         <li class="recentcomments">
         <span class="comment-author-link">
-          <a href="#" class="url">Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            vНужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
+          <a href="#" class="url">Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
 
           </a><br>
           <div class="blog-button d-inline-block">
@@ -62,18 +59,18 @@
         <!--      povtoor -->
         <li class="recentcomments">
         <span class="comment-author-link">
-          <a href="#" class="url">Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            vНужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
+          <a href="#" class="url">Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
 
           </a><br>
           <div class="blog-button d-inline-block">
@@ -85,18 +82,18 @@
         </li>
         <li class="recentcomments">
         <span class="comment-author-link">
-          <a href="#" class="url">Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            vНужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
-            Нужно удалить всё и навсегда)
+          <a href="#" class="url">Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
+            Решение проблемы)
 
           </a><br>
           <div class="blog-button d-inline-block">

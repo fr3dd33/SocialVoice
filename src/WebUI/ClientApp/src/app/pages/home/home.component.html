@@ -16,7 +16,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3" *ngFor="let issue of issues">
-        <app-issue-card [issue]="issue" (update)="onUpdate()"></app-issue-card>
+        <app-issue-card [issue]="issue" [visitorId]="visitorId" (update)="onUpdate()"></app-issue-card>
       </div>
     </div>
   </div>
