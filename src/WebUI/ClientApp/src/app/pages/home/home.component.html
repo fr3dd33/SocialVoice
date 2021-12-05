@@ -20,7 +20,7 @@
           <div class="iq-blog-box">
             <div class="iq-blog-image clearfix">
               <ul class="iq-blogtag">
-                <li><a href="javascript:void(0)">{{ issues.IssueUid }}</a></li>
+                <li><a href="javascript:void(0)">{{ issue.IssueUid }}</a></li>
               </ul>
               <ul class="title">
                 <li><p class="title-text">{{ issue.title }}</p></li>
@@ -40,14 +40,14 @@
                   </li>
                   <li class="list-inline-item pull-right">
                     <a href="javascript:void(0)" rel="bookmark">
-                      <time class="entry-date published updated" datetime="2020-02-17T06:40:07+00:00">{{ issue.region }}</time>
+                      <time class="entry-date published updated" datetime="2020-02-17T06:40:07+00:00">{{ issue.regionName }}</time>
                     </a>
                   </li>
                 </ul>
               </div>
               <div class="blog-button">
-                <a class="iq-btn-link focusable text-success pull-left">144<i class="ml-2 fa fa-plus"></i></a>
-                <a class="iq-btn-link focusable text-danger pull-right">23<i class="ml-2 fa fa-minus"></i></a>
+                <a class="iq-btn-link focusable text-success pull-left">{{ issue.pros }}<i class="ml-2 fa fa-plus"></i></a>
+                <a class="iq-btn-link focusable text-danger pull-right">{{ issue.cons }}<i class="ml-2 fa fa-minus"></i></a>
               </div>
             </div>
           </div>
