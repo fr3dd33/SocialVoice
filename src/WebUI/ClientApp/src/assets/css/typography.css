@@ -57,7 +57,7 @@ Import Css
 ::-moz-selection { background: #0d1e67; color: #fff; text-shadow: none; }
 ::selection { background: #0d1e67; color: #fff; text-shadow: none; }
 html, body { overflow: inherit !important; }
-body { font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: normal; line-height: 1.5; color: #5e7290; overflow-x: hidden; }
+body { font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: normal; line-height: 1.5; color: #596474; overflow-x: hidden; }
 a, .button { transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; color: #59597e; }
 a:focus { text-decoration: none !important; }
 a, .button, input { outline: medium none !important; color: #0D1E67; }
@@ -159,7 +159,7 @@ Button
 .iq-title-white  .iq-subtitle, .iq-title-white  .iq-title, .iq-title-white  .iq-title-desc, .iq-title-box i { color: #ffffff; }
 
 /*style 2*/
-.iq-title-box.iq-title-box-2 .iq-subtitle {     color: #007bfc; background-color: #F2F5FE; padding: 2px 20px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; margin-bottom: 15px; }
+.iq-title-box.iq-title-box-2 .iq-subtitle {     color: #007bfc; background-color: #d5def9; padding: 2px 20px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; margin-bottom: 15px; }
 
 /*----------------------------------------------------------------------
  Form

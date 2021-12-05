@@ -73,7 +73,7 @@ table td, table th { border: 1px solid #eaeaea; padding: 5px 8px; text-align: ce
 
 /* Form */
 label { color: #142149; margin-bottom: 0; }
-input, input[type=text], input[type=email], input[type=search], input[type=password], textarea { width: 100%; float: left; padding: 0 15px; height: 51px; line-height: 48px; border: 1px solid #eeeeee; color: #59597e; transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; }
+input, input[type=text], input[type=email], input[type=search], input[type=password], textarea { width: 100%; float: left; padding: 0 15px; height: 51px; line-height: 48px; border: 1px solid #aeaeae; color: #59597e; transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; }
 select { border: 2px solid #142149; background: #ffffff; line-height: 48px; height: 48px; padding: 0 10px; width: 100%; color: #59597e; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; }
 textarea { padding: 0 15px; height: 150px; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; }
 input:focus, input[type=text]:focus, input[type=email]:focus, input[type=search]:focus, input[type=password]:focus, textarea:focus, select:focus { border-color: #007BFC; box-shadow: none; outline: none; }

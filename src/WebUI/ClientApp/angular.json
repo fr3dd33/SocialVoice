@@ -25,9 +25,9 @@
               "src/template.css"
             ],
             "scripts": [
-              "src/assets/template/js/jquery-3.4.1.js",
-              "src/assets/template/js/jquery-min.js",
-              "src/assets/template/js/custom.js"
+              "src/assets/js/jquery-3.4.1.js",
+              "src/assets/js/jquery-min.js",
+              "src/assets/js/custom.js"
             ]
           },
           "configurations": {
